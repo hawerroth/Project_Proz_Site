@@ -28,8 +28,8 @@ legend{
 .inputBox{
     position: relative; /* posição normal*/
 }
-    
-    
+
+
 .inputUser{
     background: none; /* sem fundo*/
     border: none;
@@ -54,42 +54,3 @@ legend{
             color: dodgerblue;
 
 }
-#logo img {
-    width: 75px;
-    border-radius: 50%;
-    border: solid 2px #FF5F5D;
-  }
-  header {
-    padding: 15px 20px;
-    box-shadow: 0px 0px 2px black;
-    justify-content: space-between;
-  }
-  
-  #logo img {
-    width: 75px;
-    border-radius: 50%;
-    border: solid 2px #FF5F5D;
-  }
-  
-  header,
-  nav {
-    background-color: #d7f2e9;
-    display: flex;
-  }
-  
-  header nav ul {
-    align-items: center;
-    list-style: none;
-    display: flex;
-  }
-  
-  nav li {
-    padding: 10px;
-  }
-  
-  nav li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bolder;
-  }
-
