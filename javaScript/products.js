@@ -1,23 +1,51 @@
+// Style to images slider carousel
+const controls = document.querySelectorAll(".control");
+const images = document.getElementsByClassName("image");
+const maxImages = images.length;
+let currentImage = 0;
+
+controls.forEach((control) => {
+  control.addEventListener("click", () => {
+    // To know in which arrow the user clicked
+    const isLeft = control.classList.contains("arrow-left");
+
+    if (isLeft) {
+      currentImage -= 1;
+    }
+    else {
+      currentImage += 1;
+    }
+    // To not have negative index(currentImage)  or greater
+    if (currentImage >= maxImages) {
+      currentImage = 0;
+    }
+    if (currentImage < 0) {
+      currentImage = maxImages - 1;
+    }
+
+
+    Array.prototype.forEach.call(images, image => {
+      image.classList.remove("current-image");
+    });
+
+    images[currentImage].scrollIntoView({
+      behavior: "smooth",
+      inline: "center"
+    });
+
+    images[currentImage].classList.add("current-image")
+
+
+    console.log("control", isLeft, currentImage);
+  });
+});
+
+
+// Styles to products cards
+
 function addHighlight(helper) {
   helper.classList.add("highlighted");
 }
-
-function removeHighlight(helper) {
-  helper.classList.remove("highlighted");
-}
-
-//  Evento mouse button quero Encomendar
-
-// let btnEncomendar = document.getElementById("quero-encomendar");
-// console.log(btnEncomendar);
-
-// for (let i = 0 ; i < btnEncomendar.length; i++) {
-//   if (btnEncomendar[i].outerText == "QUERO ENCOMENDAR"){
-//     btnEncomendar[i].addEventListener("mouseover", (e) => {
-//       btnEncomendar[i].classList.add("btn-after");
-//     });
-//   };
-// }
 
 // Event mouse card produto
 let cardProduct = document.getElementsByClassName("card-photo");
@@ -30,6 +58,6 @@ for (let i = 0 ; i < cardProduct.length; i++) {
 }
 for (let i = 0 ; i < cardProduct.length; i++) {
   cardProduct[i].addEventListener("mouseout", (e) => {
-    removeHighlight(cardProduct[i]);
+    cardProduct[i].remove("highlighted");
   });
 }
