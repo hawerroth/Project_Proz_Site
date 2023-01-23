@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/style_css/reset.css">
     <link rel="stylesheet" href="/style_css/style_products.css">
     <script src="/javaScript/products.js"defer></script>
+    <script src="/javaScript/carousel_products.js"defer></script>
 </head>
 <body>
   <header>
@@ -36,14 +37,20 @@
   </header>
   <main>
     <h1>CONHEÇA NOSSOS PRODUTOS</h1>
-    <div class = 'products-photos'>
-      <img src="../image_products/quadro-infantil-com-botoes-artesanato.jpg">
-      <img src="../image_products/arvore-da-vida.jpg">
-      <img src="../image_products/quadro_menina_africana.png">
-      <img src="../image_products/jogo_de_mesa.jpg">
-      <img src="../image_products/familia_gatos.jpeg">
-      <img src="../image_products/Casal_bonecos.jpeg">
-      <img src="../image_products/Familia_de_gatos.jpeg">
+    <div class="container-products-img">
+      <button class="arrow-left control" aria-label="Previous Image">❮</button>
+      <button class="arrow-rigth control" aria-label="Next Image">❯</button>
+      <div class="products-photos-wrapper">
+        <div class = 'products-photos'>
+          <img src="../image_products/quadro-infantil-com-botoes-artesanato.jpg" alt="Quadro Infantil com botões" class="image">
+          <img src="../image_products/arvore-da-vida.jpg" alt="Quadro Árvore da Vida" class="image ">
+          <img src="../image_products/quadro_menina_africana.png" alt="Quadro menina Africana" class="image ">
+          <img src="../image_products/jogo_de_mesa.jpg" alt="Jogo de mesa" class="image ">
+          <img src="../image_products/familia_gatos.jpeg" alt="Família de gatos I" class="image ">
+          <img src="../image_products/Casal_bonecos.jpeg" alt="Casal de bonecos" class="image ">
+          <img src="../image_products/Familia_de_gatos.jpeg" alt="Família de gatos II" class="image ">
+        </div>
+      </div>
     </div>
     <div class="products-description">
       <h2>Os produtos realizados com carinho pelo Arte Vida  estao disponíveis para pedidos personalizados de acordo com suas preferências. Encomende já os seus.</h2>
