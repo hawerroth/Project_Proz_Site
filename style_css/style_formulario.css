@@ -1,8 +1,8 @@
 body{
-    font-family: Arial, Helvetica, sans-serif;
     background-image: linear-gradient(to left, rgba(135, 242, 183, 0.733), rgb(25,151,101));
 }
 .box{
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
     position: absolute; /* utilizar só o espaço do elemento*/
     top: 50%; /* centralizar*/
