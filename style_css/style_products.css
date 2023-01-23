@@ -133,9 +133,10 @@ a#quero-encomendar {
 .highlighted {
   border:6px solid #49524f;
   box-shadow: 6px 6px 9px 0px  rgba(0,0,0,0.5);
+  transform: scale(1.125);
 }
 
 .btn-after {
   color: rgb(17, 15, 15);
-  box-shadow: 4px 4px 4px rgb(255, 255, 255,0,3);
+  box-shadow: 4px 4px 4px rgb(255, 255, 255,0,3)
 }
