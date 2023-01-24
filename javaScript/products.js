@@ -2,13 +2,22 @@
 let cardPhoto = document.getElementsByClassName("card-photo");
 
 console.log(cardPhoto);
-for (let i = 0 ; i < cardPhoto.length; i++) {
-  cardPhoto[i].addEventListener("mouseover", (e) => {
-    cardPhoto[i].classList.add("highlighted");
+
+Array.from(cardPhoto).forEach(card => {
+  card.addEventListener("mouseenter", (e) => {
+      console.log("Evento mouse");
+      card.classList.add("border-zoom");
   });
-}
-for (let i = 0 ; i < cardPhoto.length; i++) {
-  cardPhoto[i].addEventListener("mouseout", (e) => {
-    cardPhoto[i].classList.remove("highlighted");
+  card.addEventListener("mouseleave", (e) => {
+      card.classList.remove("border-zoom");
   });
-}
+});
+// for (let i = 0 ; i < cardPhoto.length; i++) {
+//   cardPhoto[i].addEventListener("mouseenter", (e) => {
+//     console.log("Evento mouse");
+//     cardPhoto[i].classList.add("highlighted");
+//   });
+//   cardPhoto[i].addEventListener("mouseleave", (e) => {
+//     cardPhoto[i].classList.remove("highlighted");
+//   });
+// }
