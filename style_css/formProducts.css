@@ -1,0 +1,37 @@
+
+#Formulario{
+    text-orientation: sideways-right;
+    background-color:#bff5ec;
+    width: 400px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    border:1px solid;
+    border-radius: 3px;
+    margin:150px auto; 
+}
+
+h1{margin: 20px 0px;
+text-align: center;}
+
+input{margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 10px;}
+
+select{margin-bottom: 10px;
+       padding: 10px;
+       border-radius: 10px;
+        }
+
+#inputbox{display: flex;
+          flex-direction: column;
+          margin: auto;
+          width: 80%;
+        }
+
+#botão{ 
+     width: 240px;
+     height: 60px;
+     margin-bottom: 5px;
+     margin: 20px auto;   
+     border-radius: 60px;}
