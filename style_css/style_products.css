@@ -2,6 +2,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1; /* the main grow to the footer stay in the bottom of the screen*/
 }
 
 h1 {
