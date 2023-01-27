@@ -15,8 +15,6 @@ h1 {
   position: relative;
   width:965px;
   margin: 0 auto;
-  /* border: 4px solid;
-  border-radius: 5px; */
   background-color: #d7f2e9;
   box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.6);
 }
@@ -81,9 +79,9 @@ h1 {
   transition: all 600ms ease-in-out;
 }
 
-.current-image {
+.current-image {/* Style event Javascript carousel*/
   opacity: 1;
-  border:3px solid #232725;
+  border:3px solid #84D2C5;
   border-radius: 3px;
   box-shadow: 3px 3px 4px 4px rgba(47, 71, 62, 0.6);
   transform: scale(1.05);
@@ -107,13 +105,13 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color:white;
   width: 300px;
   height: 56px;
   margin: 50px auto;
-  background: #FF5F5D;
+  background: rgb(255, 95, 93);
   font-size: 20px;
-  font-weight: bolder;
+  font-weight:bolder;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
   border-radius: 15px;
 }
@@ -130,14 +128,14 @@ h1 {
 .card-photo {
   background-color: #ebf6f2;
   border: 1px solid #ccc;
-  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 6px 0px  rgb(104, 150, 137,0.3);
   justify-content: center;
   width: 300px;
   margin: 20px ;
 
 }
-.border-zoom {
-  border:6px solid #49524f;
+.border-zoom {/* Style event Javascript cards products*/
+  border:6px solid #84D2C5;
   box-shadow: 6px 6px 9px 0px  rgba(0,0,0,0.5);
   transform: scale(1.125);
 }
