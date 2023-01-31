@@ -29,6 +29,8 @@ legend{
 }
 .inputBox{
     position: relative; /* posição normal*/
+    margin: 15px 0 ;
+    padding: 10px 0 15px;
 }
 
 
@@ -44,7 +46,6 @@ legend{
     letter-spacing: 2px; /* espaçamento caracteres*/
 }
 .labelInput{
-
     position: absolute;
     top: -20px;
     font-size: 15px;
@@ -54,8 +55,28 @@ legend{
 }
 #submit{
     width: 35%;
-    height: 5vh;
+    height: 30px;
     border-radius: 10px;
     background-color: rgb white;
 }
 
+@media screen and  (max-width: 1445px) {
+  .box {
+    width: 23%; /* largura do elemento*/
+  }
+}
+@media screen and  (max-width: 1245px) {
+  .box {
+    width: 30%; /* largura do elemento*/
+  }
+}
+@media screen and  (max-width: 982px) {
+  .box {
+    width: 38%; /* largura do elemento*/
+  }
+}
+@media screen and  (max-width: 745px) {
+  .box {
+    width: 45%; /* largura do elemento*/
+  }
+}
