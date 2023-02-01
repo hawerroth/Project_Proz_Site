@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width= , initial-scale=1.0">
     <title>Formulário</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="/style_css/reset.css">
     <link rel="stylesheet" href="/style_css/style_formulario.css">
+    <link rel="stylesheet" href="/javaScript/formulario.js">
 </head>
 <body>
     <header>
@@ -38,6 +40,7 @@
             <fieldset>
                 <legend> <b>Formulário</b> </legend>
                 <br><br>
+                <form id="form"></form>
                 <div class="inputBox">
                     <label  for="nome"  class="labelInput">Nome Completo</label>
                     <input type="text" name="nome" id="nome" class="inputUser" required>
@@ -66,7 +69,8 @@
                         <br><br>
                 <p>Apoiador:</p>
                 <br>
-                    <label for="voluntario">Voluntario</label>
+                <div class=""></div>
+                    <label for="voluntario">Voluntario</label> 
                     <input type="radio" name="tipo_doador" id="voluntario" value="voluntario" required>
                     <label for="patrocinador">Patrocinador</label>
                     <input type="radio" name="tipo_doador" id="patrocinador" value="patrocinador" required>
