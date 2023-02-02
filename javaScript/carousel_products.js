@@ -29,6 +29,7 @@ controls.forEach((control) => {
     });
 
     images[currentImage].scrollIntoView({
+      block: "center",
       inline: "center",
       behavior: "smooth"
     });
@@ -36,6 +37,6 @@ controls.forEach((control) => {
     images[currentImage].classList.add("current-image")
 
 
-    console.log("control", isLeft, currentImage);
+    // console.log("control", isLeft, currentImage);
   });
 });
