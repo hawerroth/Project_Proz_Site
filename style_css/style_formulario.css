@@ -59,3 +59,32 @@ legend{
     background-color: rgb white;
 }
 
+/* ---------- Estilos dinâmicos ---------- */
+.required-popup::after {
+  /* content: "*Campo obrigatório"; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #DFDFDF;
+  font-size: .65rem;
+  padding: .2rem .3rem;
+  width: auto;
+  display: block;
+  background-color: #202020;
+}
+
+input.error {
+  border: solid 2px #af1a1a;
+  background-color: #CCBBBB;
+  color: #af1a1a;
+}
+
+input.correct {
+  background-color: #BBCCBB;
+  border: solid 2px #1c4b1c;
+  color: #1c4b1c;
+}
+
+.visible {
+  display: block;
+}
