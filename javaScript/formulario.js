@@ -23,7 +23,7 @@ function validateEmail(email) {
   var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
   return regex.test(email);
 }
-  console.log(validateEmail("angela_jhgflkj.com"));
+  
 
 // ---------- VALIDAÇÃO EMAIL ---------- //
 let emailInput = document.getElementById("email");
