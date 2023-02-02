@@ -6,21 +6,23 @@ main {
 }
 
 h1 {
-  margin: 55px 0;
+  margin-top: 200px;
   text-align: center;
   font-size: 32px;
 }
 
 .container-products-img {
   position: relative;
-  width:965px;
+  width:985px;
   margin: 0 auto;
   background-color: #d7f2e9;
   box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.6);
+  margin: 70px auto 40px;
+  padding: 20px;
 }
 .products-photos-wrapper {
   overflow-x: auto;
-  margin: 0 15px;
+  margin: 0 10px 0 15px;
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge*/
   scrollbar-width: none; /* Firefox */
@@ -31,7 +33,7 @@ h1 {
   padding: 0px auto;
   display: flex;
   flex-flow: nowrap;
-  gap: 15px;
+  gap: 20px;
   border-radius: 4px;
 }
 .arrow-left,
@@ -43,7 +45,7 @@ h1 {
   bottom: 0;
   font-size: 50px;
   line-height: 200px;
-  width: 25px;
+  width: 30px;
   text-align: center;
   color: rgb(2, 0, 0);
   cursor: pointer;
@@ -81,9 +83,9 @@ h1 {
 
 .current-image {/* Style event Javascript carousel*/
   opacity: 1;
-  border:3px solid #84D2C5;
+  border:5px solid #84D2C5;
   border-radius: 3px;
-  box-shadow: 3px 3px 4px 4px rgba(47, 71, 62, 0.6);
+  box-shadow: 3px 3px 4px 4px rgba(47, 71, 62, 0.7);
   transform: scale(1.05);
 }
 .products-description h2 {
@@ -109,7 +111,7 @@ h1 {
   width: 300px;
   height: 56px;
   margin: 50px auto;
-  background: rgb(255, 95, 93);
+  background: #ff5f5c;
   font-size: 20px;
   font-weight:bolder;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
@@ -128,10 +130,10 @@ h1 {
 .card-photo {
   background-color: #ebf6f2;
   border: 1px solid #ccc;
-  box-shadow: 2px 2px 6px 0px  rgb(104, 150, 137,0.3);
+  box-shadow: 2px 2px 6px 0px  rgba(104, 150, 137, 0.302);
   justify-content: center;
   width: 300px;
-  margin: 20px ;
+  margin: 25px 20px ;
 
 }
 .border-zoom {/* Style event Javascript cards products*/
