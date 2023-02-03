@@ -4,7 +4,7 @@ console.log (cardsProjeto);
 
 for (let i = 0 ; i < cardsProjeto.length; i++) {
     cardsProjeto[i].addEventListener("mouseover", (e) => {
-    cardsProjeto[i].style.backgroundColor = "aqua"
+    cardsProjeto[i].style.backgroundColor = "#84D2C5"
 
 });
 }

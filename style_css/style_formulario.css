@@ -27,6 +27,11 @@ legend{
     color: black;
     font-size: 20px;
 }
+input {
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
 .inputBox{
     position: relative; /* posição normal*/
     margin: 15px 0 ;
@@ -79,4 +84,33 @@ legend{
   .box {
     width: 45%; /* largura do elemento*/
   }
+}
+/* ---------- Estilos dinâmicos ---------- */
+.required-popup::after {
+  /* content: "*Campo obrigatório"; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #DFDFDF;
+  font-size: .65rem;
+  padding: .2rem .3rem;
+  width: auto;
+  display: block;
+  background-color: #202020;
+}
+
+input.error {
+  border: solid 2px #af1a1a;
+  background-color: #CCBBBB;
+  color: #af1a1a;
+}
+
+input.correct {
+  background-color: #BBCCBB;
+  border: solid 2px #1c4b1c;
+  color: #1c4b1c;
+}
+
+.visible {
+  display: block;
 }

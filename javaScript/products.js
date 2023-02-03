@@ -10,7 +10,17 @@ Array.from(cardPhoto).forEach(card => {
   });
 });
 
-const btnEncomendar = document.querySelector("bottom");
+const btnEncomendar = document.getElementById("quero-encomendar");
+
+btnEncomendar.addEventListener("mouseover", (e) => {
+  btnEncomendar.style.backgroundColor = "#84D2C5";
+  btnEncomendar.style.color = 'black';
+});
+
+btnEncomendar.addEventListener("mouseout", (e) => {
+  btnEncomendar.style.backgroundColor = 'rgb(255, 95, 93)';
+  btnEncomendar.style.color = 'white';
+});
 
 function newTab(bottom) {
   window.location.replace("../view_pages/formProducts.html");
