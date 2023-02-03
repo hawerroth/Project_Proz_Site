@@ -47,10 +47,11 @@ const product = document.querySelector("#listaProdutos");
 form.addEventListener('submit', (e) => {
   checkInputs();
   let errorElements = document.getElementsByClassName("form-control erro");
-  if (errorElements.length == 0) {
+  //  Verifica quantas vezes a variavel errorElements retornou a class 'form-control erro'
+  if (errorElements.length == 0) {/* Se 0 submit the form else preventDefault*/
     return true;
   } else {
-    e.preventDefault();
+    e.preventDefault();/* não recarregará a imagem imediatamente*/
   }
 });
 
