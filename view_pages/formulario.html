@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <title>Formulário</title>
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="/style_css/reset.css">
     <link rel="stylesheet" href="/style_css/style_formulario.css">
-    <link rel="stylesheet" href="/javaScript/formulario.js">
+    <script src="/javaScript/formulario.js"defer></script>
 </head>
 <body>
     <header>
@@ -49,7 +49,8 @@
                 <div class="inputBox">
                     <label  for="email" class="labelInput">Email</label>
                     <input type="text" name="email" id="email" class="inputUser" required>
-                </div>
+                    <p id="email-helper" class="helper-text"></p>
+                  </div>
                   <br><br>
                   <div class="inputBox">
                     <label for="cidade"  class="labelInput">Cidade</label>
@@ -70,7 +71,7 @@
                 <p>Apoiador:</p>
                 <br>
                 <div class=""></div>
-                    <label for="voluntario">Voluntario</label> 
+                    <label for="voluntario">Voluntario</label>
                     <input type="radio" name="tipo_doador" id="voluntario" value="voluntario" required>
                     <label for="patrocinador">Patrocinador</label>
                     <input type="radio" name="tipo_doador" id="patrocinador" value="patrocinador" required>
