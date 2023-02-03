@@ -8,19 +8,6 @@ footer.innerHTML='<div class="footer-list"> <ul class="text-contact"> <li>Telefo
 document.body.appendChild(footer)
 
 
-//FORMULÁRIO
-const form = document.getElementById("form")
-const username = document.getElementById("username")
-const phone =document.getElementById("phone")
-const email= document.getElementById("email")
-const quant= document.getElementById("quantidade")
-const product = document.querySelector("#listaProdutos");
-
-form.addEventListener('submit',(e) => {
-  e.preventDefault();//não recarregará a imagem imediatamente
-  checkInputs();
-});
-
 function setErro(input,message){
   const formControl=input.parentElement;
   const small= formControl.querySelector('small')
@@ -29,13 +16,45 @@ function setErro(input,message){
 
   //adicionar classe de erro
   formControl.className= "form-control erro"
-
 }
 
 function setSucesso(input){
     const formControl= input.parentElement
     formControl.className="form-control sucesso"
 }
+
+function validateEmail(email) {
+  var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+  return regex.test(email);
+}
+
+//  function to validate nome
+
+function validateNome(nome) {
+  var regex = /^[a-zA-Z\u00C0-\u00FF ]*$/;
+  return regex.test(nome);
+}
+
+//FORMULÁRIO
+const form = document.getElementById("form")
+const username = document.getElementById("username")
+const phone =document.getElementById("phone")
+const email= document.getElementById("email")
+const quant= document.getElementById("quantidade")
+const product = document.querySelector("#listaProdutos");
+
+
+form.addEventListener('submit', (e) => {
+  checkInputs();
+  let errorElements = document.getElementsByClassName("form-control erro");
+  if (errorElements.length == 0) {
+    return true;
+  } else {
+    e.preventDefault();
+  }
+});
+
+
 
 function checkInputs(){
     const usernameValue= username.value;
@@ -47,34 +66,38 @@ function checkInputs(){
 
     if (usernameValue == ""){
         setErro(username,'Este campo é obrigatório')
-    } else if (usernameValue.length<3){
+    } else if(validateNome(usernameValue)  == false || usernameValue.length<3) {
         setErro(username,'Por favor digite um nome válido')
     } else{
         setSucesso(username)
     }
 
     if(emailValue==""){
-        setErro(email,'Este campo é obrigatório')
+      setErro(email,'Este campo é obrigatório')
+    }else if (validateEmail(emailValue) == false){
+      setErro(email,"Precisa inserir um email válido que contenha o '.com ou .br'.");
     } else{
-        setSucesso(email)
+      setSucesso(email)
     }
 
     if(phoneValue==""){
         setErro(phone,'Este campo é obrigatório')
     }else{
         setSucesso(phone)
+
     }
     if(productValue == "0"){
       setErro(product,'Este campo é obrigatório')
       product.style.borderColor = "red";
     }else{
+      setSucesso(product)
       product.style.borderColor = "greenyellow";
     }
 
     if (quantValue<=0){
         setErro(quant,'Por favor coloque a quantidade desejada')
     } else{
-        setSucesso(quant)
+      setSucesso(quant)
     }
 
 }
