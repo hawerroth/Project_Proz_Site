@@ -1,0 +1,116 @@
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+ main{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+ }
+
+.container{
+  margin-top: 150px;
+  margin-bottom: 50px;
+  max-width: 100%;
+  flex-direction: column;
+  width: 400px;
+  background-color: #d7f2e9;
+  border: 2px solid rgba(0, 0, 0, 0.233);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+form{margin : 10px;
+  
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-control{
+  margin-bottom: 5px;
+  padding-bottom:5px;
+  position: relative;
+}
+
+.form-control label{
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-control input{
+  width: 100%;
+  padding: 6px;
+  border: 2px solid rgba(238, 226, 226, 0.712);
+  border-radius: 10px;
+  display: block;
+  font-size: 15px;
+}
+
+.form-control select{
+  width: 100%;
+  padding: 6px;
+  border: 2px solid rgba(0, 0, 0, 0.712);
+  border-radius: 5px;
+  display: block;
+  font-size: 15px;
+}
+
+
+
+.form-control i{
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.form-control small{
+  top: 0;
+  bottom: 0;
+  visibility: hidden;
+  }
+
+#botão {
+  font-size: 17px;
+     width: 100%;
+    border-radius: 10px;
+    border: 1,8px solid black;
+    padding: 10px;
+
+}
+/*ESTILIZAÇÃO VALIDAÇÃO ERRO E SUCESSO*/
+
+.form-control.sucesso input{
+  border-color:greenyellow ;
+  
+}
+
+.form-control.erro input{
+  border-color: red;
+  
+}
+
+.form-control.erro i.fa-circle-exclamation{
+  color: red;
+  visibility: visible;
+}
+
+.form-control.sucesso i.fa-circle-check{
+  color: greenyellow;
+  visibility: visible;
+}
+
+.form-control.erro small{
+  color: red;
+  visibility: visible;
+}

@@ -1,23 +1,31 @@
-// Styles to products cards
-function addHighlight(helper) {
-  helper.classList.add("highlighted");
-}
-
-function removeHighlight(helper) {
-  helper.classList.remove("highlighted");
-}
-
 // Event mouse card produto
-let cardProduct = document.getElementsByClassName("card-photo");
+let cardPhoto = document.getElementsByClassName("card-photo");
 
-// I use the for to run the cardProduct array, to know what card-photo the mouse is over.
-for (let i = 0 ; i < cardProduct.length; i++) {
-  cardProduct[i].addEventListener("mouseover", (e) => {
-    addHighlight(cardProduct[i]);
+Array.from(cardPhoto).forEach(card => {
+  card.addEventListener("mouseenter", (e) => {
+    card.classList.add("border-zoom");
   });
-}
-for (let i = 0 ; i < cardProduct.length; i++) {
-  cardProduct[i].addEventListener("mouseout", (e) => {
-    removeHighlight(cardProduct[i]);
+  card.addEventListener("mouseleave", (e) => {
+    card.classList.remove("border-zoom");
   });
+});
+
+const btnEncomendar = document.getElementById("quero-encomendar");
+
+btnEncomendar.addEventListener("mouseover", (e) => {
+  btnEncomendar.style.backgroundColor = "#84D2C5";
+  btnEncomendar.style.color = 'black';
+});
+
+btnEncomendar.addEventListener("mouseout", (e) => {
+  btnEncomendar.style.backgroundColor = 'rgb(255, 95, 93)';
+  btnEncomendar.style.color = 'white';
+});
+
+function newTab(bottom) {
+  window.location.replace("../view_pages/formProducts.html");
 }
+
+btnEncomendar.addEventListener("click", (e) => {
+  newTab(btnEncomendar);
+});

@@ -1,7 +1,10 @@
 main {
+  margin-top: 50px;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1;
 }
 
 h1 {
@@ -13,7 +16,6 @@ h1 {
   display: flex;
   justify-content: space-around;
   margin: 60px 90px;
-  /* border-radius: 30px; */
 }
 
 .projeto-card {
@@ -45,7 +47,9 @@ h1 {
 
 /* página responsiva  */
 @media screen and (max-width: 992px) {
-
+  /* main {
+    flex-grow: 0;
+  } */
   nav li {
     padding: 5px;
   }
