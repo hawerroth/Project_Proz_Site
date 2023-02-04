@@ -23,6 +23,8 @@ function setSucesso(input){
     formControl.className="form-control sucesso"
 }
 
+//function validate email
+
 function validateEmail(email) {
   var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
   return regex.test(email);
@@ -35,6 +37,12 @@ function validateNome(nome) {
   return regex.test(nome);
 }
 
+//function validate telefone
+
+function validatePhone(phone) {
+  var regex = /^\(\d{2}\)\s\d{5}-\d{4}$|^\(\d{2}\)\s\d{4}-\d{4}$/;
+  return regex.test(phone);
+}
 //FORMULÁRIO
 const form = document.getElementById("form")
 const username = document.getElementById("username")
@@ -81,12 +89,15 @@ function checkInputs(){
       setSucesso(email)
     }
 
-    if(phoneValue.length<=10){
-        setErro(phone,'Este campo é obrigatório')
-    } else{
-        setSucesso(phone)
+    if (phoneValue == ""){
+      setErro(phone,'Este campo é obrigatório')
+  } else if(validatePhone(phoneValue)  == false) {
+      setErro(phone,'Por favor digite um nome válido')
+  } else{
+      setSucesso(phone)
+  }
 
-    }
+
     if(productValue == "0"){
       setErro(product,'Este campo é obrigatório')
       product.style.borderColor = "red";
