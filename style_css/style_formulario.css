@@ -12,7 +12,8 @@ body{
     padding: 15px; /* espaco entre o elemento e a borda*/
     border-radius: 15px; /* arredondar as bordas*/
     width: 20%; /* largura do elemento*/
-    }
+    margin-top: 70px;
+  }
 fieldset{
     border: 3px solid rgb(23, 198, 131);
     text-align: center;

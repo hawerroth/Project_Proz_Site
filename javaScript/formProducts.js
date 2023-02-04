@@ -81,9 +81,9 @@ function checkInputs(){
       setSucesso(email)
     }
 
-    if(phoneValue==""){
+    if(phoneValue.length<=10){
         setErro(phone,'Este campo é obrigatório')
-    }else{
+    } else{
         setSucesso(phone)
 
     }
