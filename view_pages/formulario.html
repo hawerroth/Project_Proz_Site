@@ -3,91 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <title>Formulário</title>
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="/style_css/reset.css">
     <link rel="stylesheet" href="/style_css/style_formulario.css">
-    <link rel="stylesheet" href="/javaScript/formulario.js">
+    <script src="/javaScript/formulario.js"defer></script>
 </head>
 <body>
-    <header>
-      <div id="logo">
-        <img src="/images/logo_teste_5.png">
+  <header>
+    <div id="logo">
+      <img src="/images/logo_teste_5.png">
     </div>
-        <nav>
-            <ul>
-              <li>
-                <a href="Homepage.html">Início</a>
-              </li>
-              <li>
-                <a href="about.html">Sobre nós</a>
-                </li>
-              <li>
-                <a href="projetos.html">Projetos</a>
-              </li>
-              <li>
-                <a href="products.html">Produtos</a>
-              </li>
-              <li>
-                <a href="formulario.html">Quero Ajudar</a>
-              </li>
-            </ul>
-          </nav>
-    </header>
-    <div class="box">
-        <form action="">
-            <fieldset>
-                <legend> <b>Formulário</b> </legend>
-                <br><br>
-                <form id="form"></form>
-                <div class="inputBox">
-                    <label  for="nome"  class="labelInput">Nome Completo</label>
-                    <input type="text" name="nome" id="nome" class="inputUser" required>
-                </div>
-                  <br><br>
-                <div class="inputBox">
-                    <label  for="email" class="labelInput">Email</label>
-                    <input type="text" name="email" id="email" class="inputUser" required>
-                </div>
-                  <br><br>
-                  <div class="inputBox">
-                    <label for="cidade"  class="labelInput">Cidade</label>
-                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
-                  </div>
-                    <br><br>
-                  <div class="inputBox">
-                    <label for="estado"  class="labelInput">Estado</label>
-                    <input type="text" name="estado" id="estado" class="inputUser" required>
-                  <br><br>
-                  </div>
-                    <br>
-                <div class="inputBox">
-                        <label for="telefone"  class="labelInput">Telefone</label>
-                        <input type="tel" name="telefone" id="telefone" class="inputUser" required>
-                </div>
-                        <br><br>
-                <p>Apoiador:</p>
-                <br>
-                <div class=""></div>
-                    <label for="voluntario">Voluntario</label> 
-                    <input type="radio" name="tipo_doador" id="voluntario" value="voluntario" required>
-                    <label for="patrocinador">Patrocinador</label>
-                    <input type="radio" name="tipo_doador" id="patrocinador" value="patrocinador" required>
-                    <label for="doador">Doador</label>
-                    <input type="radio" name="tipo_doador" id="doador" value="doador" required>
-                    <br><br>
-                    <div class="container">
-                    <input type="submit" name="submit" id="submit">
-                    <br><br>
-                    </div>
-            </fieldset>
+    <nav>
+      <ul>
+        <li>
+          <a href="Homepage.html">Início</a>
+        </li>
+        <li>
+          <a href="about.html">Sobre nós</a>
+          </li>
+        <li>
+          <a href="projetos.html">Projetos</a>
+        </li>
+        <li>
+          <a href="products.html">Produtos</a>
+        </li>
+        <li>
+          <a href="formulario.html">Quero Ajudar</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="box">
+    <form action="">
+      <fieldset>
+        <legend> <b>Formulário</b> </legend>
+        <br><br>
+        <div class="inputBox">
+            <label  for="nome"  class="labelInput">Nome Completo</label>
+            <input type="text" name="nome" id="nome" class="inputUser" required>
+        </div>
 
-        </form>
-    </div>
+        <div class="inputBox">
+          <label  for="email" class="labelInput">Email</label>
+          <input type="text" name="email" id="email" class="inputUser" required>
+        </div>
 
+        <div class="inputBox">
+          <label for="cidade"  class="labelInput">Cidade</label>
+          <input type="text" name="cidade" id="cidade" class="inputUser" required>
+        </div>
 
+        <div class="inputBox">
+          <label for="estado"  class="labelInput">Estado</label>
+          <input type="text" name="estado" id="estado" class="inputUser" required>
+        </div>
 
+        <div class="inputBox">
+          <label for="telefone"  class="labelInput">Telefone</label>
+          <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+        </div>
 
+        <p>Apoiador:</p>
+
+        <label for="voluntario">Voluntario</label>
+        <input type="radio" name="tipo_doador" id="voluntario" value="voluntario" required>
+        <label for="patrocinador">Patrocinador</label>
+        <input type="radio" name="tipo_doador" id="patrocinador" value="patrocinador" required>
+        <label for="doador">Doador</label>
+        <input type="radio" name="tipo_doador" id="doador" value="doador" required>
+        <br><br>
+        <div class="container">
+          <input type="submit" name="submit" id="submit">
+        <br><br>
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </body>
 </html>

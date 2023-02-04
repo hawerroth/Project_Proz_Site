@@ -14,16 +14,35 @@ const username = document.getElementById("username")
 const phone =document.getElementById("phone")
 const email= document.getElementById("email")
 const quant= document.getElementById("quantidade")
+const product = document.querySelector("#listaProdutos");
 
 form.addEventListener('submit',(e) => {
-    e.preventDefault();//não recarregará a imagem imediatamente
-    checkInputs();
+  e.preventDefault();//não recarregará a imagem imediatamente
+  checkInputs();
 });
+
+function setErro(input,message){
+  const formControl=input.parentElement;
+  const small= formControl.querySelector('small')
+  //adicionar menssagem de erro
+  small.innerText=message;
+
+  //adicionar classe de erro
+  formControl.className= "form-control erro"
+
+}
+
+function setSucesso(input){
+    const formControl= input.parentElement
+    formControl.className="form-control sucesso"
+}
+
 function checkInputs(){
     const usernameValue= username.value;
     const phoneValue= phone.value;
     const emailValue =email.value;
     const quantValue = quant.value;
+    const productValue = product.value;
 
 
     if (usernameValue == ""){
@@ -34,39 +53,30 @@ function checkInputs(){
         setSucesso(username)
     }
 
-        if(emailValue==""){
-            setErro(email,'Este campo é obrigatório')
-        } else{
-            setSucesso(email)
-        }
+    if(emailValue==""){
+        setErro(email,'Este campo é obrigatório')
+    } else{
+        setSucesso(email)
+    }
 
-            if(phoneValue==""){
-                setErro(phone,'Este campo é obrigatório')
-            }else{
-                setSucesso(phone)}
+    if(phoneValue==""){
+        setErro(phone,'Este campo é obrigatório')
+    }else{
+        setSucesso(phone)
+    }
+    if(productValue == "0"){
+      setErro(product,'Este campo é obrigatório')
+      product.style.borderColor = "red";
+    }else{
+      product.style.borderColor = "greenyellow";
+    }
 
-                if (quantValue<=0){
-                    setErro(quant,'Por favor coloque a quantidade desejada')
-                } else{
-                    setSucesso(quant)
-                }
-    
-}
- 
-function setErro(input,message){
-const formControl=input.parentElement;
-const small= formControl.querySelector('small')
-//adicionar menssagem de erro
-small.innerText=message;
+    if (quantValue<=0){
+        setErro(quant,'Por favor coloque a quantidade desejada')
+    } else{
+        setSucesso(quant)
+    }
 
-//adicionar classe de erro
-formControl.className= "form-control erro"
-
-}
-
-function setSucesso(input){
-    const formControl= input.parentElement
-    formControl.className="form-control sucesso"
 }
 
 // BOTÃO

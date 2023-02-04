@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style_css/reset.css">
-    <link rel="stylesheet" href="/style_css/formProducts.css">
-    <script src="/javaScript/formProducts.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style_css/reset.css">
+  <link rel="stylesheet" href="/style_css/formProducts.css">
+  <script src="/javaScript/formProducts.js" defer></script>
 <!--ICONS-->
-    <script src="https://kit.fontawesome.com/8fc440223f.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/8fc440223f.js" crossorigin="anonymous"></script>
 <!--FONTE-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
-<body>
-    <main>
-        <div class="container">
-      <form action="" id="form">
-                  <h1>Formulário Produtos</h1>
-                  <div class="form-control ">
-                  <label for="username">Nome Completo*</label>
-                  <input type="text" id="username" placeholder="Digite seu nome" >
-                  <i class="fa-solid fa-circle-exclamation"></i>
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                  <small>Campo obrigatório</small>
-                  </div>
-                  <div class="form-control ">
-                  <label for="phone">Contato*</label>
-                  <input type="tel" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX">
-                  <i class="fa-solid fa-circle-exclamation"></i>
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                  <small>Campo obrigatório</small>
-                  </div> 
-                  <div class="form-control">
-                  <label for=""></label>
-                  <label for="email">E-mail*</label>
-                  <input type="email" name="email" id="email">
-                  <i class="fa-solid fa-circle-exclamation"></i>
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                  <small>Campo obrigatório</small>
-                  </div>
 
-                  <div class="form-control">
-                  <label for="listaProdutos">Produto*</label>
-                  <select name="listaProdutos" id="listaProdutos">
-                      <option value="">Nenhum</option>
-                      <option value="">Porta Chaves Árvore do Amor</option>
-                      <option value="">Quadro Artesal Árvore da Vida</option>
-                      <option value="">Quadro Artesal Menina Africana</option>
-                      <option value="">Conjunto de mesa 24 peças</option>
-                      <option value="">Casal de Bonecos</option>
-                      <option value="">Família de Gatos</option>
-                  </select>
-                  <small>Campo obrigatório</small>
-                </div>
-                <div class="form-control">
-                  <label for="quantidade">Quantidade*</label>
-                  <input type="number" name="quantidade" id="quantidade" placeholder="0">
-                  <i class="fa-solid fa-circle-exclamation"></i>
-                  <i class="fa-sharp fa-solid fa-circle-check"></i>
-                  <small>Campo obrigatório</small>
-              </div>
-              <button type="submit" id="botão"> Solicitar Pedido</button>
+<body>
+  <main>
+    <div class="container">
+      <form action="" id="form">
+        <h1>Formulário Produtos</h1>
+        <div class="form-control ">
+          <label for="username">Nome Completo*</label>
+          <input type="text" id="username" placeholder="Digite seu nome" >
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <i class="fa-sharp fa-solid fa-circle-check"></i>
+          <small>Campo obrigatório</small>
+        </div>
+
+        <div class="form-control ">
+          <label for="phone">Contato*</label>
+          <input type="tel" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <i class="fa-sharp fa-solid fa-circle-check"></i>
+          <small>Campo obrigatório</small>
+        </div>
+
+        <div class="form-control">
+          <label for=""></label>
+          <label for="email">E-mail*</label>
+          <input type="email" name="email" id="email">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <i class="fa-sharp fa-solid fa-circle-check"></i>
+          <small>Campo obrigatório</small>
+        </div>
+
+        <div class="form-control">
+          <label for="listaProdutos">Produto*</label>
+          <select name="listaProdutos" id="listaProdutos">
+            <option value="0">Nenhum</option>
+            <option value="">Porta Chaves Árvore do Amor</option>
+            <option value="">Quadro Artesal Árvore da Vida</option>
+            <option value="">Quadro Artesal Menina Africana</option>
+            <option value="">Conjunto de mesa 24 peças</option>
+            <option value="">Casal de Bonecos</option>
+            <option value="">Família de Gatos</option>
+          </select>
+          <small>Campo obrigatório</small>
+        </div>
+        
+        <div class="form-control">
+          <label for="quantidade">Quantidade*</label>
+          <input type="number" name="quantidade" id="quantidade" placeholder="0">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <i class="fa-sharp fa-solid fa-circle-check"></i>
+          <small>Campo obrigatório</small>
+        </div>
+        <button type="submit" id="botão"> Solicitar Pedido</button>
       </form>
-      </div>
-    </main>
+    </div>
+  </main>
 </body>
 </html>
