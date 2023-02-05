@@ -1,5 +1,6 @@
 const form = document.getElementById('form')
 const campos = document.querySelectorAll('inputUser')
+const submit = document.getElementById("submit")
 
 function togglePopup(input, label) {
   // Mostrar popup de campo obrigatório
@@ -10,6 +11,9 @@ function togglePopup(input, label) {
   input.addEventListener("blur", () => {
     label.classList.remove("required-popup");
   });
+}
+function disableSubmit() {
+  submit.disable = true;
 }
 
 function estilizarInputCorreto(input, helper) {
@@ -23,6 +27,8 @@ function estilizarInputIncorreto(input, helper) {
   input.classList.add("error");
   input.classList.remove("correct");
 }
+
+
 function validateEmail(email) {
   var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
   return regex.test(email);
@@ -34,20 +40,24 @@ function validateNome(nome){
 }
 
 function validateTelefone(telefone){
-var regex = /^\(\d{2}\)\s\d{5}-\d{4}$|^\(\d{2}\)\s\d{4}-\d{4}$/;
+  var regex = /^\(\d{2}\)\s\d{5}-\d{4}$|^\(\d{2}\)\s\d{4}-\d{4}$/;
   return regex.test(telefone);
 }
 
-function validateEstado(arrayStates , state) {
-  let result = false;
-  for (let i = 0; i< arrayStates.length; i++){
-    if (arrayStates[i] === state){
-      return true;
-      break;
-    } else {
-      return false
+function validateEstado(state) {
+  const states = [ "Acre","AC", "Alagoas", "AL", "Amapá", "AP", "Amazonas", "AM", "Bahia", "BA", "Ceará", "CE",
+  "Distrito Federal", "DF", "Espírito Santo", "ES", "Goiás", "GO", "Maranhão", "MA", "Mato Grosso", "MT",
+  "Mato Grosso do Sul", "MS", "Minas Gerais", "MG", "Pará", "PA", "Paraíba", "PB", "Paraná", "PR",
+  "Pernambuco", "PE", "Piauí", "PI", "Rio de Janeiro", "RJ", "Rio Grande do Norte", "RN", "Rio Grande do Sul", "RS",
+  "Rondônia", "RO", "Roraima", "RR", "Santa Catarina", "SC", "São Paulo", "SP", "Sergipe", "SE", "Tocantins", "TO"
+  ];
+  let quantTrue = 0;
+  for (let i =0; i < states.length; i++) {
+    if(states[i] == state) {
+      quantTrue += 1;
     }
   }
+  return quantTrue;
 }
 // ---------- VALIDAÇÃO EMAIL ---------- //
 let emailInput = document.getElementById("email");
@@ -102,26 +112,19 @@ let estadoInput = document.getElementById("estado");
 let estadoLabel = document.querySelector('label[for="estado"]');
 let estadoHelper = document.getElementById("estado-helper");
 
+
 togglePopup(estadoInput, estadoLabel);
 
 // Validar valor do input
 estadoInput.addEventListener("change", (e)=> {
   let valor = e.target.value
-  const states = [ "Acre","AC", "Alagoas", "AL", "Amapá", "AP", "Amazonas", "AM", "Bahia", "BA", "Ceará", "CE",
-  "Distrito Federal", "DF", "Espírito Santo", "ES", "Goiás", "GO", "Maranhão", "MA", "Mato Grosso", "MT",
-  "Mato Grosso do Sul", "MS", "Minas Gerais", "MG", "Pará", "PA", "Paraíba", "PB", "Paraná", "PR",
-  "Pernambuco", "PE", "Piauí", "PI", "Rio de Janeiro", "RJ", "Rio Grande do Norte", "RN", "Rio Grande do Sul", "RS",
-  "Rondônia", "RO", "Roraima", "RR", "Santa Catarina", "SC", "São Paulo", "SP", "Sergipe", "SE", "Tocantins", "TO"
-  ];
 
-  const stringStates = states.toString();
-
-  if(stringStates.includes(valor) == true){
-  // Adicionar estilos dinâmicos se o valor estiver correto
-    estadoHelper.innerText= " ";
+  if(validateEstado(valor) == 1){
+    // Adicionar estilos dinâmicos se o valor estiver correto
+    estadoHelper.innerText = " ";
     estilizarInputCorreto(estadoInput, estadoHelper);
   } else {
-    // Adicionar estilos dinâmicos se o valor não estiver correto
+    // Adicionar estilos dinâmicos se o valor tiver menos de 3 caracteres
     estadoHelper.innerText = "Precisa inserir um estado válido";
     estilizarInputIncorreto(estadoInput, estadoHelper);
   }
