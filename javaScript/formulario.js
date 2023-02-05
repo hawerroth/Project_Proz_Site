@@ -6,6 +6,10 @@ function togglePopup(input, label) {
   input.addEventListener("focus", () => {
     label.classList.add("required-popup");
   });
+  // Ocultar popup de campo obrigatório
+  input.addEventListener("blur", () => {
+    label.classList.remove("required-popup");
+  });
 }
 
 function estilizarInputCorreto(input, helper) {
@@ -28,10 +32,22 @@ function validateNome(nome){
   var regex = /^[a-zA-Z\u00C0-\u00FF ]*$/;
   return regex.test(nome);
 }
- 
+
 function validateTelefone(telefone){
 var regex = /^\(\d{2}\)\s\d{5}-\d{4}$|^\(\d{2}\)\s\d{4}-\d{4}$/;
   return regex.test(telefone);
+}
+
+function validateEstado(arrayStates , state) {
+  let result = false;
+  for (let i = 0; i< arrayStates.length; i++){
+    if (arrayStates[i] === state){
+      return true;
+      break;
+    } else {
+      return false
+    }
+  }
 }
 // ---------- VALIDAÇÃO EMAIL ---------- //
 let emailInput = document.getElementById("email");
@@ -79,26 +95,35 @@ nomeInput.addEventListener("change", (e)=> {
     estilizarInputCorreto(nomeInput,nomeHelper);
   }
 })
-  
+
 // ------- VALIDAÇÃO ESTADO --------- //
 
 let estadoInput = document.getElementById("estado");
 let estadoLabel = document.querySelector('label[for="estado"]');
 let estadoHelper = document.getElementById("estado-helper");
 
-togglePopup(estadoInput, estadoLabel)
+togglePopup(estadoInput, estadoLabel);
 
+// Validar valor do input
 estadoInput.addEventListener("change", (e)=> {
-  let estadoValue = e.target.value
+  let valor = e.target.value
+  const states = [ "Acre","AC", "Alagoas", "AL", "Amapá", "AP", "Amazonas", "AM", "Bahia", "BA", "Ceará", "CE",
+  "Distrito Federal", "DF", "Espírito Santo", "ES", "Goiás", "GO", "Maranhão", "MA", "Mato Grosso", "MT",
+  "Mato Grosso do Sul", "MS", "Minas Gerais", "MG", "Pará", "PA", "Paraíba", "PB", "Paraná", "PR",
+  "Pernambuco", "PE", "Piauí", "PI", "Rio de Janeiro", "RJ", "Rio Grande do Norte", "RN", "Rio Grande do Sul", "RS",
+  "Rondônia", "RO", "Roraima", "RR", "Santa Catarina", "SC", "São Paulo", "SP", "Sergipe", "SE", "Tocantins", "TO"
+  ];
 
-  if(estadoValue==" "){
-  // Adicionar estilos dinâmicos se o valor estiver incorreto
-    estadoHelper.innerText= "Precisa inserir um estado válido";
-    estilizarInputIncorreto(estadoInput, estadoHelper);
+  const stringStates = states.toString();
+
+  if(stringStates.includes(valor) == true){
+  // Adicionar estilos dinâmicos se o valor estiver correto
+    estadoHelper.innerText= " ";
+    estilizarInputCorreto(estadoInput, estadoHelper);
   } else {
-   // Adicionar estilos dinâmicos se o valor estiver correto
-   estadoHelper.innerText= ""; 
-   estilizarInputCorreto(estadoInput,estadoHelper);
+    // Adicionar estilos dinâmicos se o valor não estiver correto
+    estadoHelper.innerText = "Precisa inserir um estado válido";
+    estilizarInputIncorreto(estadoInput, estadoHelper);
   }
 })
 
@@ -119,7 +144,7 @@ cidadeInput.addEventListener("change", (e)=> {
     estilizarInputIncorreto(cidadeInput, cidadeHelper);
   } else {
    // Adicionar estilos dinâmicos se o valor estiver correto
-   cidadeHelper.innerText= "";
+    cidadeHelper.innerText= "";
     estilizarInputCorreto(cidadeInput,cidadeHelper);
   }
 })
