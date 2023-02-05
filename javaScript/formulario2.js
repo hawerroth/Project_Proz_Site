@@ -1,7 +1,7 @@
 let nomeInput  = document.getElementById("nome");
 let nomeLabel = document.querySelector('label[for="nome"]');
 let nomeHelper = document.getElementById("nome-helper");
-
+let emailInput = document.getElementById("email")
 // Mostrar popup de campo obrigatório
 nomeInput.addEventListener("focus", function (evento) {
     nomeLabel.classList.add("required-popup");
@@ -13,7 +13,7 @@ nomeInput.addEventListener("blur", function (evento) {
 });
 
 //validar valor do input
-nomeInput.addEventListener("change", (evento)=>{
+nomeInput.addEventListener("change", (evento) => {
     let valueInput = evento.target.value;
 
     if(valueInput.leng < 3){
@@ -23,3 +23,12 @@ nomeInput.addEventListener("change", (evento)=>{
         nomeHelper.style.display = "block";
     }
 });
+
+emailInput.addEventListener("change", (event) =>{
+let emailValue = event.target.value;
+if (emailValue.includes("@") && emailValue.includes(".com")){
+    emailInput.classList.add("correct");
+} else{
+    emailInput.classList.add("error");
+}
+})

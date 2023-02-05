@@ -58,37 +58,20 @@ input {
     pointer-events: none; /* qualquer lugar que clicar executa a ação*/
     transition: .2s;
 }
+.helper-text{
+  display: none;
+  font-size: .8rem;
+  color: darkred;
+}
 #submit{
     width: 35%;
     height: 30px;
     border-radius: 10px;
     background-color: rgb white;
 }
-
-@media screen and  (max-width: 1445px) {
-  .box {
-    width: 23%; /* largura do elemento*/
-  }
-}
-@media screen and  (max-width: 1245px) {
-  .box {
-    width: 30%; /* largura do elemento*/
-  }
-}
-@media screen and  (max-width: 982px) {
-  .box {
-    width: 38%; /* largura do elemento*/
-  }
-}
-@media screen and  (max-width: 745px) {
-  .box {
-    width: 45%; /* largura do elemento*/
-  }
-}
-/* ---------- Estilos dinâmicos ---------- */
 .required-popup::after {
-  /* content: "*Campo obrigatório"; */
-  position: absolute;
+  content: "Campo Obrigatório";
+  position:absolute;
   top: 0;
   right: 0;
   color: #DFDFDF;
@@ -96,21 +79,18 @@ input {
   padding: .2rem .3rem;
   width: auto;
   display: block;
-  background-color: #202020;
+  background-color: #e9e3e3;
 }
-
 input.error {
-  border: solid 2px #af1a1a;
+  border: solid 2px #992020;
   background-color: #CCBBBB;
-  color: #af1a1a;
+  color: #662020;
 }
-
 input.correct {
   background-color: #BBCCBB;
-  border: solid 2px #1c4b1c;
-  color: #1c4b1c;
+  border: solid 2px #206666;
+  color:#206620;
 }
-
 .visible {
   display: block;
 }
