@@ -50,23 +50,53 @@ input {
     font-size: 12px;
     width: 95%;
     letter-spacing: 2px; /* espaçamento caracteres*/
-}
-.labelInput{
+  }
+  .labelInput{
     position: absolute;
     top: -20px;
     font-size: 15px;
     left: 10px;
     pointer-events: none; /* qualquer lugar que clicar executa a ação*/
     transition: .2s;
-}
-#submit{
+  }
+  #submit{
     width: 35%;
     height: 30px;
     border-radius: 10px;
     background-color: rgb white;
-}
+  }
 
-@media screen and  (max-width: 1445px) {
+  /* ---------- Estilos dinâmicos ---------- */
+  .required-popup::after {
+    content: "*Campo obrigatório";
+    position: absolute;
+    top: 0;
+    left: 200px;
+    color: #DFDFDF;
+    font-size: .65rem;
+    padding: .2rem .3rem;
+    width: auto;
+    display: block;
+    background-color: #202020;
+  }
+
+  input.error {
+    border: solid 2px #af1a1a;
+    background-color: #CCBBBB;
+    color: #af1a1a;
+  }
+
+  input.correct {
+    background-color: #BBCCBB;
+    border: solid 2px #15ce15;
+    color: BLACK;
+  }
+
+  .visible {
+    display: block;
+  }
+
+  @media screen and  (max-width: 1445px) {
   .box {
     width: 23%; /* largura do elemento*/
   }
@@ -85,33 +115,4 @@ input {
   .box {
     width: 45%; /* largura do elemento*/
   }
-}
-/* ---------- Estilos dinâmicos ---------- */
-.required-popup::after {
-  /* content: "*Campo obrigatório"; */
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: #DFDFDF;
-  font-size: .65rem;
-  padding: .2rem .3rem;
-  width: auto;
-  display: block;
-  background-color: #202020;
-}
-
-input.error {
-  border: solid 2px #af1a1a;
-  background-color: #CCBBBB;
-  color: #af1a1a;
-}
-
-input.correct {
-  background-color: #BBCCBB;
-  border: solid 2px #1c4b1c;
-  color: #1c4b1c;
-}
-
-.visible {
-  display: block;
 }
