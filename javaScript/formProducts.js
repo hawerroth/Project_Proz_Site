@@ -92,7 +92,7 @@ function checkInputs(){
     if (phoneValue == ""){
       setErro(phone,'Este campo é obrigatório')
   } else if(validatePhone(phoneValue)  == false) {
-      setErro(phone,'Por favor digite um nome válido')
+      setErro(phone,'Por favor digite o telefone como o exemplo')
   } else{
       setSucesso(phone)
   }
