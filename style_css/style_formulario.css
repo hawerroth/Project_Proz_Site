@@ -39,64 +39,77 @@ input {
     padding: 10px 0 15px;
 }
 
-
 .inputUser{
-    background: none; /* sem fundo*/
-    border: none;
-    border-bottom: 1px solid white;
-    outline: none; /* tira a marcação quando clicar*/
-    color:white; /* cor da escrita*/
-    top: 5px;
-    font-size: 12px;
-    width: 95%;
-    letter-spacing: 2px; /* espaçamento caracteres*/
-  }
-  .labelInput{
-    position: absolute;
-    top: -20px;
-    font-size: 15px;
-    left: 10px;
-    pointer-events: none; /* qualquer lugar que clicar executa a ação*/
-    transition: .2s;
-  }
-  #submit{
-    width: 35%;
-    height: 30px;
-    border-radius: 10px;
-    background-color: rgb white;
-  }
+  background: none; /* sem fundo*/
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none; /* tira a marcação quando clicar*/
+  color:white; /* cor da escrita*/
+  top: 5px;
+  font-size: 12px;
+  width: 95%;
+  letter-spacing: 2px; /* espaçamento caracteres*/
+}
+.labelInput{
+  position: absolute;
+  top: -20px;
+  font-size: 15px;
+  left: 10px;
+  pointer-events: none; /* qualquer lugar que clicar executa a ação*/
+  transition: .2s;
+}
+#submit{
+  width: 35%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgb white;
+}
 
-  /* ---------- Estilos dinâmicos ---------- */
-  .required-popup::after {
-    content: "*Campo obrigatório";
-    position: absolute;
-    top: 0;
-    left: 200px;
-    color: #DFDFDF;
-    font-size: .65rem;
-    padding: .2rem .3rem;
-    width: auto;
-    display: block;
-    background-color: #202020;
-  }
+/* ---------- Estilos dinâmicos ---------- */
+.required-popup::after {
+  content: "*Campo obrigatório";
+  position: absolute;
+  top: 0;
+  left: 200px;
+  color: #DFDFDF;
+  font-size: .65rem;
+  padding: .2rem .3rem;
+  width: auto;
+  display: block;
+  background-color: #202020;
+}
 
-  input.error {
-    border: solid 2px #af1a1a;
-    background-color: #CCBBBB;
-    color: #af1a1a;
-  }
+input.error {
+  border: solid 2px #af1a1a;
+  background-color: #CCBBBB;
+  color: #af1a1a;
+}
 
-  input.correct {
-    background-color: #BBCCBB;
-    border: solid 2px #15ce15;
-    color: BLACK;
-  }
+input.correct {
+  background-color: #BBCCBB;
+  border: solid 2px #15ce15;
+  color: BLACK;
+}
+.visible {
+  display: block;
+}
+/* style the alert */
+.swal2-styled.swal2-confirm {
+  border-radius: 0.25em;
+  background: initial;
+  background-color: #ff5f5c;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 1em;
+}
+.swal2-popup {
+  background-color: #d7f2e9;
+  color: rgba(47, 71, 62);
+  border-radius: 15px;
+}
 
-  .visible {
-    display: block;
-  }
-
-  @media screen and  (max-width: 1445px) {
+/* responsive page */
+@media screen and  (max-width: 1445px) {
   .box {
     width: 23%; /* largura do elemento*/
   }
