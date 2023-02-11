@@ -3,11 +3,11 @@ const campos = document.querySelectorAll("inputUser");
 const submit = document.getElementById("submit");
 
 // flag para validar email
-let emailInvalid = false;
-let nomeInvalid = false;
-let cidadeInvalid = false;
-let estadoInvalid = false;
-let telefoneInvalid = false;
+let emailInvalid = true;
+let nomeInvalid = true;
+let cidadeInvalid = true;
+let estadoInvalid = true;
+let telefoneInvalid = true;
 
 function togglePopup(input, label) {
   // Mostrar popup de campo obrigatório
@@ -18,9 +18,6 @@ function togglePopup(input, label) {
   input.addEventListener("blur", () => {
     label.classList.remove("required-popup");
   });
-}
-function disableSubmit() {
-  submit.disable = true;
 }
 
 function estilizarInputCorreto(input, helper) {
@@ -41,7 +38,7 @@ function validateEmail(email) {
 }
 
 function validateNome(nome) {
-  var regex = /^[a-zA-Z\u00C0-\u00FF ]*$/;
+  var regex = /^[a-zA-ZÀ-ÿ\u00C0-\u00FF ]+$/;
   return regex.test(nome);
 }
 
@@ -115,6 +112,7 @@ function validateEstado(state) {
   }
   return quantTrue;
 }
+
 // ---------- VALIDAÇÃO EMAIL ---------- //
 let emailInput = document.getElementById("email");
 let emailLabel = document.querySelector('label[for="email"]');
@@ -125,21 +123,19 @@ togglePopup(emailInput, emailLabel);
 emailInput.addEventListener("change", (e) => {
   let emailValue = e.target.value;
 
-  if (validateEmail(emailValue) == true) {
+  if (validateEmail(emailValue) == true){
     // Adicionar estilos dinâmicos se o valor estiver correto
     emailHelper.innerText = " ";
     estilizarInputCorreto(emailInput, emailHelper);
+
+    // trocando da flag para caso o email seja válido
+    emailInvalid = false;
   } else {
-    // Adicionar estilos dinâmicos se o valor tiver menos de 3 caracteres
+    // Adicionar estilos dinâmicos se o valor estuiver incorreto
     emailHelper.innerText = "Precisa inserir um email válido";
     estilizarInputIncorreto(emailInput, emailHelper);
+    // disable button submit if the input name is incorrect
 
-    // trocando da flag para caso o email seja invalido
-    emailInvalid = true;
-    nomeInvalid = true;
-    cidadeInvalid = true;
-    estadoInvalid = true;
-    telefoneInvalid = true;
   }
 });
 
@@ -154,18 +150,16 @@ togglePopup(nomeInput, nomeLabel);
 nomeInput.addEventListener("change", (e) => {
   let nomeValue = e.target.value;
 
-  if (nomeValue == " ") {
-    // Adicionar estilos dinâmicos se o valor estiver incorreto
-    nomeHelper.innerText = "Precisa inserir um nome válido";
-    estilizarInputIncorreto(nomeInput, nomeHelper);
-  } else if (validateNome(nomeValue) == false || nomeValue.length <= 3) {
-    // Adicionar estilos dinâmicos se o valor estiver incorreto
-    nomeHelper.innerText = "Precisa inserir um nome válido";
-    estilizarInputIncorreto(nomeInput, nomeHelper);
-  } else {
+  if (validateNome(nomeValue) == true && validateNome(nomeValue).length <= 3) {
     // Adicionar estilos dinâmicos se o valor estiver correto
-    nomeHelper.innerText = "";
+    nomeHelper.innerText = " ";
     estilizarInputCorreto(nomeInput, nomeHelper);
+
+    nomeInvalid = false;
+  } else {
+    // Adicionar estilos dinâmicos se o valor estiver incorreto
+    nomeHelper.innerText = "Precisa inserir um nome válido";
+    estilizarInputIncorreto(nomeInput, nomeHelper);
   }
 });
 
@@ -185,6 +179,8 @@ estadoInput.addEventListener("change", (e) => {
     // Adicionar estilos dinâmicos se o valor estiver correto
     estadoHelper.innerText = " ";
     estilizarInputCorreto(estadoInput, estadoHelper);
+
+    estadoInvalid = false;
   } else {
     // Adicionar estilos dinâmicos se o valor tiver menos de 3 caracteres
     estadoHelper.innerText = "Precisa inserir um estado válido";
@@ -193,6 +189,7 @@ estadoInput.addEventListener("change", (e) => {
 });
 
 // ------- VALIDAÇÃO CIDADE --------- //
+
 
 let cidadeInput = document.getElementById("cidade");
 let cidadeLabel = document.querySelector('label[for="cidade"]');
@@ -207,10 +204,13 @@ cidadeInput.addEventListener("change", (e) => {
     // Adicionar estilos dinâmicos se o valor estiver incorreto
     cidadeHelper.innerText = "Precisa inserir um cidade válido";
     estilizarInputIncorreto(cidadeInput, cidadeHelper);
+
   } else {
     // Adicionar estilos dinâmicos se o valor estiver correto
     cidadeHelper.innerText = "";
     estilizarInputCorreto(cidadeInput, cidadeHelper);
+
+    cidadeInvalid = false;
   }
 });
 
@@ -225,29 +225,30 @@ togglePopup(telefoneInput, telefoneLabel);
 telefoneInput.addEventListener("change", (e) => {
   let telefoneValue = e.target.value;
 
-  if (telefoneValue == " ") {
-    // Adicionar estilos dinâmicos se o valor estiver incorreto
-    telefoneHelper.innerText = "Precisa inserir um telefone válido";
-    estilizarInputIncorreto(telefoneInput, telefoneHelper);
-  } else if (validateTelefone(telefoneValue) == false) {
-    // Adicionar estilos dinâmicos se o valor estiver incorreto
-    telefoneHelper.innerText = "Precisa inserir um telefone válido";
-    estilizarInputIncorreto(telefoneInput, telefoneHelper);
-  } else {
+  if (validateTelefone(telefoneValue) == true) {
     // Adicionar estilos dinâmicos se o valor estiver correto
     telefoneHelper.innerText = "";
     estilizarInputCorreto(telefoneInput, telefoneHelper);
-  }
+
+    telefoneInvalid = false;
+  } else {
+    // Adicionar estilos dinâmicos se o valor estiver incorreto
+    telefoneHelper.innerText = "Precisa inserir um telefone válido";
+    estilizarInputIncorreto(telefoneInput, telefoneHelper);
+}
 });
 
-// função para validar todos os campos no submit
-function cadastrar(){
-  if(emailInvalid && nomeInvalid && estadoInvalid && cidadeInvalid && telefoneInvalid){
-    alert("Todos os campos precisam ser preenchidos e validados!")
-  } else{
-    alert("Usuário cadastrado");
-  }
-}
+// Event listener to the submit button
+submit.addEventListener("click", (e) => {
+  // Prevent the default behavior of the submit button
+  e.preventDefault();
 
-// evento de click para o botão que chama a função cadastrar
-submit.addEventListener('click', cadastrar());
+  // Check if any of the form fields are invalid
+  if (!emailInvalid && !nomeInvalid && !cidadeInvalid && !estadoInvalid && !telefoneInvalid) {
+    // If all form fields are valid, submit the form
+    form.submit();
+  } else {
+    // If any form field is invalid, show an alert message to the user
+    alert("Por favor, corrija os erros no formulário antes de enviar");
+  }
+});
