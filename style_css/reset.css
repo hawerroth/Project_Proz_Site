@@ -100,5 +100,6 @@ header ul{
 }
 header ul li:hover{
   -webkit-transform: scale(1.3);
-   transform: scale(1.2);
+  transform: scale(1.2);
+  padding: 10px;
 }
