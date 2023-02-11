@@ -37,6 +37,6 @@ controls.forEach((control) => {
     images[currentImage].classList.add("current-image")
 
 
-    // console.log("control", isLeft, currentImage);
+    // console.log("control", isLeft, currenmage);
   });
 });
