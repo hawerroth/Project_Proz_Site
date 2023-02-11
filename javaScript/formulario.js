@@ -1,4 +1,5 @@
 const form = document.getElementById("form");
+console.log(form);
 const campos = document.querySelectorAll("inputUser");
 const submit = document.getElementById("submit");
 
@@ -38,7 +39,7 @@ function validateEmail(email) {
 }
 
 function validateNome(nome) {
-  var regex = /^[a-zA-ZÀ-ÿ\u00C0-\u00FF ]+$/;
+  var regex = /^[a-zA-Z\u00C0-\u00FF ]*$/;
   return regex.test(nome);
 }
 
@@ -150,7 +151,7 @@ togglePopup(nomeInput, nomeLabel);
 nomeInput.addEventListener("change", (e) => {
   let nomeValue = e.target.value;
 
-  if (validateNome(nomeValue) == true && validateNome(nomeValue).length <= 3) {
+  if (validateNome(nomeValue) == true && nomeValue.length > 7) {
     // Adicionar estilos dinâmicos se o valor estiver correto
     nomeHelper.innerText = " ";
     estilizarInputCorreto(nomeInput, nomeHelper);
@@ -242,7 +243,10 @@ telefoneInput.addEventListener("change", (e) => {
 submit.addEventListener("click", (e) => {
   // Prevent the default behavior of the submit button
   e.preventDefault();
-
+  // Check if form element exists
+  if (!form) {
+    return alert("Form element with id 'form' not found");
+  }
   // Check if any of the form fields are invalid
   if (!emailInvalid && !nomeInvalid && !cidadeInvalid && !estadoInvalid && !telefoneInvalid) {
     // If all form fields are valid, submit the form
