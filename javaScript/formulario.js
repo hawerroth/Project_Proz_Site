@@ -1,5 +1,5 @@
-const form = document.getElementById("form");
-console.log(form);
+
+const form = document.querySelector('form');
 const campos = document.querySelectorAll("inputUser");
 const submit = document.getElementById("submit");
 
@@ -240,19 +240,23 @@ telefoneInput.addEventListener("change", (e) => {
 });
 
 // Event listener to the submit button
-submit.addEventListener("click", (e) => {
-  // Prevent the default behavior of the submit button
-  e.preventDefault();
-  // Check if form element exists
-  if (!form) {
-    return alert("Form element with id 'form' not found");
-  }
+form.addEventListener("submit", (e) => {
+  const classError = document.querySelectorAll(".error");
   // Check if any of the form fields are invalid
-  if (!emailInvalid && !nomeInvalid && !cidadeInvalid && !estadoInvalid && !telefoneInvalid) {
+  if (!nomeInvalid && !emailInvalid && !cidadeInvalid && !estadoInvalid && !telefoneInvalid) {
     // If all form fields are valid, submit the form
-    form.submit();
-  } else {
+    return true
+  }else if (classError.length > 0){
+    // Prevent the default behavior of the submit button
+    e.preventDefault();
+    $("#showAlert").form;
     // If any form field is invalid, show an alert message to the user
-    alert("Por favor, corrija os erros no formulário antes de enviar");
+    swal.fire("Por favor, corrija os erros no formulário antes de enviar");
+  } else {
+    // Prevent the default behavior of the submit button
+    e.preventDefault();
+
+    // If any form field is invalid, show an alert message to the user
+    swal.fire("Por favor, corrija os erros no formulário antes de enviar");
   }
 });
