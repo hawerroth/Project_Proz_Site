@@ -43,9 +43,13 @@ function validatePhone(phone) {
   var regex = /^\(\d{2}\)\s\d{5}-\d{4}$|^\(\d{2}\)\s\d{4}-\d{4}$/;
   return regex.test(phone);
 }
-function hideenAlert(button, alert) {
+
+// Function to hide the alert message
+function hiddenAlert(button, alert) {
   button.addEventListener("click", (e) => {
+    // Adds the "hidden" class to hide the alert message
     alert.classList.add("hidden");
+    // Adds the "hidden" class to hide the alert message
     form.submit();
   });
 }
@@ -61,6 +65,7 @@ const product = document.querySelector("#listaProdutos");
 
 
 form.addEventListener('submit', (e) => {
+  // Call a function to check if the inputs are valid
   checkInputs();
   let errorElements = document.getElementsByClassName("form-control erro");
   if (errorElements.length == 0) {
@@ -69,14 +74,19 @@ form.addEventListener('submit', (e) => {
     const button = document.getElementById("alert-button");
 
     message.innerHTML = `${username.value}, obrigado por realizar sua encomenda! Em breve entraremos em contato.`;
+    // Remove the "hidden" class to display the alert
     alert.classList.remove("hidden");
 
-    if (!hideenAlert(button, alert)){
+    // Call the function to hide the alert message when the button is clicked
+    if (!hiddenAlert(button, alert)){
+      // If the function returns false, prevent the form from submitting
       e.preventDefault();
     } else {
+      // If the function returns true, proceed with the form submission
       return true;
     }
   } else {
+    // If there are elements with the "form-control erro" class, prevent the form from submitting
     e.preventDefault();/* não recarregará a imagem imediatamente*/
     return false;
   };
