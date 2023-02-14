@@ -29,7 +29,7 @@
 }
 
 form{margin : 10px;
-  
+
 }
 h1 {
   text-align: center;
@@ -92,12 +92,12 @@ h1 {
 
 .form-control.sucesso input{
   border-color:greenyellow ;
-  
+
 }
 
 .form-control.erro input{
   border-color: red;
-  
+
 }
 
 .form-control.erro i.fa-circle-exclamation{
@@ -113,4 +113,36 @@ h1 {
 .form-control.erro small{
   color: red;
   visibility: visible;
+}
+
+#alert {
+  font-family: 'Monteserrat',sans-serif;
+  background-color: #84D2C5;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+#alert.hidden {
+  display: none;
+}
+
+#alert-button {
+  background-color: #FF5F5D;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
 }

@@ -43,6 +43,13 @@ function validatePhone(phone) {
   var regex = /^\(\d{2}\)\s\d{5}-\d{4}$|^\(\d{2}\)\s\d{4}-\d{4}$/;
   return regex.test(phone);
 }
+function hideenAlert(button, alert) {
+  button.addEventListener("click", (e) => {
+    alert.classList.add("hidden");
+    form.submit();
+  });
+}
+
 //FORMULÁRIO
 const form = document.getElementById("form")
 const username = document.getElementById("username")
@@ -52,16 +59,28 @@ const quant= document.getElementById("quantidade")
 const product = document.querySelector("#listaProdutos");
 
 
+
 form.addEventListener('submit', (e) => {
   checkInputs();
   let errorElements = document.getElementsByClassName("form-control erro");
-  //  Verifica quantas vezes a variavel errorElements retornou a class 'form-control erro'
-  if (errorElements.length == 0) {/* Se 0 submit the form else preventDefault*/
-    return true;
+  if (errorElements.length == 0) {
+    const alert = document.getElementById("alert");
+    const message = document.getElementById("alert-message");
+    const button = document.getElementById("alert-button");
+
+    message.innerHTML = `${username.value}, obrigado por realizar sua encomenda! Em breve entraremos em contato.`;
+    alert.classList.remove("hidden");
+
+    if (!hideenAlert(button, alert)){
+      e.preventDefault();
+    } else {
+      return true;
+    }
   } else {
     e.preventDefault();/* não recarregará a imagem imediatamente*/
-  }
-});
+    return false;
+  };
+})
 
 
 

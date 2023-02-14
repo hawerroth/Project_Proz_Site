@@ -95,16 +95,19 @@ h1 {
   transform: scale(1.05);
 }
 
-.products-description h2 {
-  padding-bottom: 20px;
-  margin: 30px;
-  font-weight: 500;
-  font-size: 26px;
-}
 .products-description {
+  width:85%;
   margin: 30px auto;
   display: flex;
   flex-direction: column;
+}
+
+.products-description h2 {
+  text-align: center;
+  padding-bottom: 20px;
+  margin: 30px ;
+  font-weight: 400;
+  font-size: 26px;
 }
 .descriptions-product {
   font-size: 18px;
