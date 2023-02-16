@@ -1,6 +1,6 @@
 //HEADER
 const header= document.createElement("header")
-header.innerHTML=' <div id="logo">  <img src="/images/logo_teste_5.png" alt=""></div> <nav> <ul class="menu"> <a href="Homepage.html"><li>Início</li></a> <a href="about.html"><li>Sobre nós</li></a> <a href="projetos.html"><li>Projetos</li></a> <a href="products.html"><li>Produtos</li></a> <a href="formulario.html"><li>Quero Ajudar</li></a> </ul> </nav>'
+header.innerHTML=' <div id="logo">  <img src="/images/logo_teste_5.png" alt=""></div> <nav> <ul class="menu"> <a href="../index.html"><li>Início</li></a> <a href="../view_pages/about.html"><li>Sobre nós</li></a> <a href="../view_pages/projetos.html"><li>Projetos</li></a> <a href="../view_pages/products.html"><li>Produtos</li></a> <a href="../view_pages/formulario.html"><li>Quero Ajudar</li></a> </ul> </nav>'
 document.body.appendChild(header)
 //FOOTER
  const footer= document.createElement("footer")
