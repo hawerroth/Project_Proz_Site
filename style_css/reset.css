@@ -17,16 +17,16 @@ header {
   top: 0;
   width: 100%;
   z-index: 1;/*sobreposição nos elementos*/
-  padding: 15px 20px;
+  padding: 10px 20px;
   margin-bottom: 50px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.349);
   justify-content: space-between;
 }
 
 #logo img {
-  width: 75px;
+  width: 50px;
   border-radius: 50%;
-  border: solid 3px #FF5F5D;
+  border: solid 2px #FF5F5D;
 }
 
 header, nav {
@@ -49,6 +49,7 @@ nav li {
 nav li a, .menu a {
   text-decoration: none;
   color:black;
+  font-size: 13px;
   font-weight: 700;
 }
 
